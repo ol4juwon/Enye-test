@@ -1,13 +1,17 @@
+/* eslint-disable no-undef */
 /*!
   * Bootstrap v5.0.0-beta1 (https://getbootstrap.com/)
   * Copyright 2011-2020 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
+  // eslint-disable-next-line no-unused-expressions
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('@popperjs/core')) :
+  // eslint-disable-next-line no-undef
   typeof define === 'function' && define.amd ? define(['@popperjs/core'], factory) :
+  // eslint-disable-next-line no-restricted-globals
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.bootstrap = factory(global.Popper));
-}(this, (function (Popper) { 'use strict';
+}(this, (function (Popper) { 
 
   function _interopNamespace(e) {
     if (e && e.__esModule) return e;
