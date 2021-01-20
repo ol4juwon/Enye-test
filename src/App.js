@@ -11,6 +11,7 @@ const App = () => {
   const [profiles,setProfiles] = useState([]);
   const [search,setSearch] = useState("");
   const [query,setQuery] = useState("");
+  const [searchColumns,setSearchColumns] = useState(['FirstName','LastName'])
   //const todos = [];
   // const todosPerPage = 20;
   // const [ activePage, setCurrentPage ] = useState(1);
@@ -21,9 +22,7 @@ const App = () => {
 
 
 
-  useEffect( () => {
-getProfiles();
-  },[query]);
+  useEffect( () => {getProfiles();},[searchColumns]);
 
 //   const renderTodos = currentTodos.map( ( todo, index ) => {
 //     return <li key={ index }>{ todo }</li>;
@@ -48,12 +47,12 @@ const getSearch = e =>{
   setQuery(search);
 }
 function searchData(rows){
-  const columns = rows[0] && Object.keys(rows[0]);
   return rows.filter((row) => 
-    columns.some((column) => row[column].toString().toLowerCase().indexOf(search.toLowerCase()) >-1 ));
+    searchColumns.some((column) => row[column].toString().toLowerCase().indexOf(search.toLowerCase()) >-1 ));
 
 }
 
+const columns = profiles[0] && Object.keys(profiles[0]);
 return(
 <div className="App">
   <h1>Hello react  </h1>
